@@ -3,7 +3,7 @@ import socket
 import matplotlib.pyplot as plt
 
 # Configurações de rede
-HOST = '127.0.0.1'  # Endereço IP do computador servidor
+HOST = '192.168.0.15'  # Endereço IP do computador servidor
 PORT = 12346       # Porta para a conexão
 
 # Cria um objeto de socket

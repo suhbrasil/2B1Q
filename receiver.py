@@ -6,7 +6,7 @@ import tkinter as tk
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Define o endereço IP e a porta para o socket
-host = '192.168.15.91'  # Substitua pelo IP do servidor
+host = '192.168.0.15'  # Substitua pelo IP do servidor
 port = 12346  # A mesma porta usada pelo servidor
 
 # Conecta-se ao servidor
