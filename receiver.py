@@ -35,22 +35,24 @@ def decode_2B1Q(data):
     bits = []
 
     # Estado inicial
-    state = '+3'
+    state = '00'
 
     # Percorre os sinais quaternários
-    for signal in data:
+    for i in range(0, len(data), 2):
+        pair = data[i:i+2]
+
         # Verifica se o sinal está no mapeamento inverso
-        if signal in signal_map_inverse:
-            current_bits = signal_map_inverse[signal]
+        if pair in signal_map_inverse:
+            current_bits = signal_map_inverse[pair]
         else:
             # Em caso de sinal não reconhecido, mantém os últimos bits para evitar erros
-            current_bits = signal_map_inverse[state]
+            current_bits = state
 
         # Adiciona os bits atuais à lista de bits
         bits.append(current_bits)
 
         # Atualiza o estado para o próximo sinal
-        state = signal
+        state = current_bits
 
     return ''.join(bits)
 
